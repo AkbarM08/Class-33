@@ -47,7 +47,6 @@ function setup(){
 }
 
 function draw(){
-    if(backgroundImg)
         background(backgroundImg);
     
         noStroke();
@@ -103,13 +102,9 @@ function keyPressed(){
 }
 
 async function getBackgroundImg(){
-    var response = await fetch("http://worldclockapi.com/api/json/est/now");
-    var responseJSON = await response.json();
-
-    var datetime = responseJSON.currentDateTime;
-    var hour = datetime.slice(11,13);
+    var hour = Math.round(random(1,2))
     
-    if(hour>=06 && hour<=19){
+    if(hour===1){
         bg = "sprites/bg1.png";
     }
     else{
