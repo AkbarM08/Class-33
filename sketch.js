@@ -13,7 +13,7 @@ var bg = "bg1.png";
 var score = 0;
 
 function preload() {
-    getBackgroundImg();
+    backgroundImg = loadImage("sprites/bg1.png")
 }
 
 function setup(){
@@ -99,18 +99,4 @@ function keyPressed(){
         Matter.Body.setPosition(bird.body, {x: 200 , y: 50});
        slingshot.attach(bird.body);
     }
-}
-
-async function getBackgroundImg(){
-    var hour = Math.round(random(1,2))
-    
-    if(hour===1){
-        bg = "bg1.png";
-    }
-    else{
-        bg = "bg2.jpg";
-    }
-
-    backgroundImg = loadImage(bg);
-    console.log(backgroundImg);
 }
